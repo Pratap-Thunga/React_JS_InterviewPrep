@@ -58,3 +58,17 @@ counter(); // Count is 3
     20
   );
 })(10); // Output is 10
+
+// Q6 - Funtion Hoisting -- In JavaScript, function declarations are hoisted to the top of their containing scope, meaning they can be called before they are defined in the code.
+
+hoistedFunction(); // This works because of hoisting
+
+function hoistedFunction() {
+  console.log("This function is hoisted!");
+}
+
+nonhoistedFunction(); // This will throw an error
+
+const nonhoistedFunction = function () {
+  console.log("This function is not hoisted!");
+}; //Uncaught ReferenceError: Cannot access 'nonhoistedFunction' before initialization
