@@ -72,3 +72,42 @@ nonhoistedFunction(); // This will throw an error
 const nonhoistedFunction = function () {
   console.log("This function is not hoisted!");
 }; //Uncaught ReferenceError: Cannot access 'nonhoistedFunction' before initialization
+
+{
+  var a = 10;
+  function testScope() {
+    console.log(a);
+    var a = 20;
+  }
+  testScope(); // Output: undefined - due to variable hoisting within the function scope, not the outer block scope.
+}
+
+// Q7 - Parameters vs Arguments
+function multiply(x, y) {
+  // x and y are parameters
+  return x * y;
+}
+
+const result = multiply(5, 10); // 5 and 10 are arguments
+console.log("Result is " + result);
+
+// Q8 - Default Parameters
+function greetUser(name = "Guest") {
+  console.log("Hello, " + name + "!");
+}
+
+greetUser("Alice"); // Hello, Alice!
+greetUser(); // Hello, Guest!
+
+// Q9 - Spread Vs Rest Operator
+
+// Spread Operator - Expands an array into individual elements
+const numbers = [1, 2, 3];
+console.log(...numbers); // Output: 1 2 3
+
+// Rest Operator - Collects multiple elements into an array
+function sumAll(...args) {
+  return args.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sumAll(1, 2, 3, 4)); // Output: 10
