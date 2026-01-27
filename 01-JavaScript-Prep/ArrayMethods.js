@@ -90,3 +90,33 @@ const mapStuds = students.map((curr, i, arry) => {
 });
 
 console.log(mapStuds);
+
+const highScorers = students.filter((curr) => {
+  return curr.score >= 80;
+});
+
+console.log(highScorers);
+
+const sumOfAll = students.reduce((acc, current, i, arr) => {
+  return acc + current.score;
+}, 0);
+
+console.log(sumOfAll);
+
+const namesAb80 = students
+  .filter((curr) => {
+    return curr.score >= 80;
+  })
+  .map((curr) => curr.name.toUpperCase());
+
+console.log(namesAb80);
+
+const finalTotal = students
+  .map((curr, i, arr) => {
+    if (curr.score < 80) {
+      curr.score += 10;
+    }
+    return curr;
+  })
+  .filter((curr) => curr.score >= 80);
+console.log(finalTotal);
