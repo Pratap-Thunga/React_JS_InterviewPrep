@@ -90,3 +90,15 @@ const mapStuds = students.map((curr, i, arry) => {
 });
 
 console.log(mapStuds);
+
+const highScorers = students.filter((curr) => {
+  return curr.score >= 80;
+});
+
+console.log(highScorers);
+
+const sumOfAll = students.reduce((acc, current, i, arr) => {
+  return acc + current.score;
+}, 0);
+
+console.log(sumOfAll);
