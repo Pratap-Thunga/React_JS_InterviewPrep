@@ -132,3 +132,31 @@ function scopeTest() {
   console.log(blockScoped);
 }
 scopeTest();
+
+// Q11 - Callback Functions - A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+function fetchData(callback) {
+  setTimeout(() => {
+    const data = { name: "John", age: 30 };
+    callback(data);
+  }, 1000);
+}
+fetchData(function (data) {
+  console.log("Data received:", data);
+});
+
+// Q12 - Arrow Functions - Arrow functions provide a concise syntax for writing functions in JavaScript. They are often used for shorter functions and do not have their own 'this' context.
+const add = (a, b) => a + b;
+console.log("Sum is " + add(5, 10));
+
+// Q13- Arrow Function vs Regular Function
+const obj = {
+  regularFunction: function () {
+    console.log("Regular Function 'this':", this);
+  },
+  arrowFunction: () => {
+    console.log("Arrow Function 'this':", this);
+  },
+};
+
+obj.regularFunction(); // 'this' refers to obj
+obj.arrowFunction(); // 'this' refers to the surrounding scope (likely global or undefined in strict mode)
