@@ -111,3 +111,8 @@ function sumAll(...args) {
 }
 
 console.log(sumAll(1, 2, 3, 4)); // Output: 10
+
+function numbers(x, y, z, ...nums) {
+  console.log(x, y, z, nums);
+}
+numbers(1, 2, 3, 4, 5, 6, 7, 8); // Output: 1 2 3 [4,5,6,7,8]
