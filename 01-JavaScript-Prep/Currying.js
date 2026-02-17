@@ -30,3 +30,15 @@ console.log(arthmtcOperations("sum")(2)(3)); //5
 console.log(arthmtcOperations("multiply")(2)(3)); //6
 console.log(arthmtcOperations("divide")(10)(2)); //5
 console.log(arthmtcOperations("substract")(5)(3)); //2
+
+//Q3 - sum(1)(2)...(n) should return the sum of all the numbers
+
+function infiniteSum(a) {
+  return function (b) {
+    if (b) return infiniteSum(a + b);
+    return a;
+  };
+}
+
+console.log(infiniteSum(1)(2)(3)); //6
+console.log(infiniteSum(1)(2)(3)(4)); //10
